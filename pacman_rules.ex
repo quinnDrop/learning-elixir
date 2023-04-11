@@ -3,34 +3,34 @@ defmodule Rules do
   def eat_ghost?(true, true) do
     true
   end
-  def eat_ghost?(power_pellet_active, touching_ghost) do
+  def eat_ghost?(_power_pellet_active, _touching_ghost) do
     false
   end
   # Define if Pac-Man scores
-  def score?(true, touching_dot) do
+  def score?(true, _touching_dot) do
     true
   end
-  def score?(touching_power_pellet, true) do
+  def score?(_touching_power_pellet, true) do
     true
   end
-  def score?(touching_power_pellet, touching_dot) do
+  def score?(_touching_power_pellet, _touching_dot) do
     false
   end
   # Define if Pacman Loses
   def lose?(false, true) do
     true
   end
-  def lose?(power_pellet_active, touching_ghost) do
+  def lose?(_power_pellet_active, _touching_ghost) do
     false
   end
   # Define if Pacman Wins
-  def win?(false, power_pellet_active, touching_ghost) do
+  def win?(false, _power_pellet_active, _touching_ghost) do
     false
   end
   def win?(true, false, true) do
     false
   end
-  def win?(eaten_all_dots, power_pellet_active, touching_ghost) do
+  def win?(_eaten_all_dots, _power_pellet_active, __touching_ghost) do
     true
   end
 

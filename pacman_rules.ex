@@ -24,11 +24,14 @@ defmodule Rules do
     false
   end
   # Define if Pacman Wins
-  def win?(true, true, false) do
-    true
+  def win?(false, power_pellet_active, touching_ghost) do
+    false
+  end
+  def win?(true, false, true) do
+    false
   end
   def win?(eaten_all_dots, power_pellet_active, touching_ghost) do
-    false
+    true
   end
 
 end
